@@ -1,0 +1,79 @@
+machine:
+    device_type: "CHML_ROBOT"
+    device_sub_type: "H3"
+    sw_version: "v23.02.10"
+    hw_version: "v23.03.10"
+
+
+
+
+# 外设电机部分的参数
+wheelpid:
+    - DIF : 5
+      KP  : 200.0
+      KI  : 30.5
+      KD  : 20.2
+      # LIMIT : 200
+    - DIF : 10
+      KP  : 300.0
+      KI  : 30.5
+      KD  : 20.2
+      # LIMIT : 500
+    - DIF : 50
+      KP  : 400.0
+      KI  : 40.5
+      KD  : 20.2
+      # LIMIT : 1500    
+    - DIF : 100
+      KP  : 500.0
+      KI  : 50.5
+      KD  : 20.2
+      # LIMIT : 2000
+
+wheelparam:
+    WHEEL_CODE_DISC : 30.0
+    WHEEL_DISTANCE : 0.271
+    WHEEL_DIAMETER : 0.0795
+    LENGTH2ENCODE_L : 4200
+    LENGTH2ENCODE_R : 4183
+
+
+fanpid:
+    fKp :   100.0
+    fKi :   30.0
+    fKd :   20.0
+    fPwmMax : 65000
+    fPwmMin : 10000
+
+moppid:
+    mKp :   25.0
+    mKi :   7.0
+    mKd :   2.0
+    mPwmMax : 40000
+    mPwmMin : 9000
+
+# network网络部分的参数
+
+NetworkService:
+    sService : "chml611-2.4G"
+    sPassword : "chml123456"
+    iFavorite : 1
+    iAutoconnect : 1
+
+device_sn: 
+    sn : "H60170000000000O05060001"
+
+ntp:
+    sNtpServers: "122.224.9.29 94.130.49.186"
+    sTimeZone : "ChinaStandardTime-8"
+    sTimeZoneFile : "posix/Etc/GMT-8"
+    sTimeZoneFileDst : "posix/Asia/Shanghai"
+    iAutoMode : 0
+    iAutoDst: 1
+    iRefreshTime : 60 
+
+
+BackgroundUrl:
+    device_reg_api: "http://api.veniibot.com/api/app/v010/registerIot/D1003/"
+    device_bind_api: "http://api.veniibot.com/api/app/v010/registerDevice/D1003/"
+
